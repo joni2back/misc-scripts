@@ -1,7 +1,7 @@
 alias ..='cd ..'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias apache='sudo /etc/init.d/apache2'
-alias build='time (node /home/jonas/ferozo-svn/ferozo3/main/build/r.js -o /home/jonas/ferozo-svn/ferozo3/main/build/require.build.hosting.js ; node /home/jonas/ferozo-svn/ferozo3/main/build/r.js -o /home/jonas/ferozo-svn/ferozo3/main/build/require.build.dhm.js ; clearcache ; dump)'
+alias build='time (node ~/main/build/r.js -o ~/main/build/require.build.hosting.js ; node ~/main/build/r.js -o ~/main/build/require.build.dhm.js ; clearcache ; dump)'
 alias clear='clear; printf '\''%*s\n'\'' 238 '\'''\'' | tr '\'' '\'' \#'
 alias cls='clear'
 alias fullpath='readlink -f '
