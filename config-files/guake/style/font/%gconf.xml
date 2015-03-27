@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="style" mtime="1427457204" type="string">
+		<stringvalue>Ubuntu Mono 12</stringvalue>
+	</entry>
+	<entry name="palette" mtime="1427457637" type="string">
+		<stringvalue>#000000000000:#e0a200000000:#4f5bde3e8cb6:#c4c4a0a00000:#000000000000:#757550507b7b:#060698209a9a:#e739e739e739:#555557575353:#efef29292929:#3e73e90e87fe:#ffffcda12fd8:#68e7bd70ee8f:#adad7f7fa8a8:#2b02d9fce71a:#efefefefefef</stringvalue>
+	</entry>
+</gconf>

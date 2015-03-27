@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="show_hide" mtime="1425294968" type="string">
+		<stringvalue>&lt;Shift&gt;space</stringvalue>
+	</entry>
+</gconf>
