@@ -1,55 +1,6 @@
+127.0.0.1 me localhost dev
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+#ADOBE HOSTS
 127.0.0.1 3dns-1.adobe.com
 127.0.0.1 3dns-2.adobe.com
 127.0.0.1 3dns-3.adobe.com
@@ -101,3 +52,4 @@
 127.0.0.1 www.wip2.adobe.com
 127.0.0.1 www.wip3.adobe.com
 127.0.0.1 www.wip4.adobe.com
+
