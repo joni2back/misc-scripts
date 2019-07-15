@@ -6,7 +6,8 @@ BSSID="$1"
 CHANNEL="$2"
 BSSNAME="$3"
 MONITOR="en0"
-DIR_NAME=./results/"$BSSID"_"$BSSNAME"
+TIMESTAMP=$(date +'%Y-%m-%d__%H.%M')
+DIR_NAME=./results/"$BSSID"_"$BSSNAME"/"$TIMESTAMP"
 FILE_NAME="$DIR_NAME"/"$BSSID"__ch"$CHANNEL"
 
 if [ -z "$BSSNAME" ]; then
@@ -24,6 +25,7 @@ EXIT_STATUS="$?"
 
 if [ $EXIT_STATUS != "0" ]; then
     echo "UNKNOWN ERROR, LAST EXIT STATUS FROM TCPDUMP WAS $EXIT_STATUS"
+    rm -fr "$DIR_NAME"
     exit 4
 fi
 
@@ -31,7 +33,14 @@ sudo tcpdump "ether proto 0x888e and ether host $BSSID" -I -U -vvv -i $MONITOR -
 
 mergecap -a -F pcap -w "$FILE_NAME".capture.cap "$FILE_NAME".beacon.cap "$FILE_NAME".handshake.cap
 
-cap2hccapx "$FILE_NAME".capture.cap "$FILE_NAME".capture.hccapx
+HCCAPX_RESULT=$(cap2hccapx "$FILE_NAME".capture.cap "$FILE_NAME".capture.hccapx)
+
+echo $HCCAPX_RESULT
+if grep -q "Written 0" <<< "$HCCAPX_RESULT" ; then
+    echo "CANNOT OBTAIN HANDSHAKE FOR $BSSID CLIENTS"
+    #rm -fr "$DIR_NAME"
+    exit 5
+fi
 
 echo ""
 echo "[+] DONE! POSSIBLE OPTIONS"
